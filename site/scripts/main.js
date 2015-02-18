@@ -1,9 +1,9 @@
 /**
  * Main JavaScript
- * Site Name
+ * Way2cu-Site
  *
  * Copyright (c) 2015. by Way2CU, http://way2cu.com
- * Authors:
+ * Authors: Tal Reznic
  */
 
 // create or use existing site scope
