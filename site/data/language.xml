@@ -2,6 +2,20 @@
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
 	<language name="English" short="en" default="yes">
-		<constant name="site_title">Site title</constant>
+		<constant name="site_title">Way2cu</constant>
+		<constant name="menu_home">Home</constant>
+		<constant name="menu_about">About us</constant>
+		<constant name="menu_portfolio">Portfolio</constant>
+		<constant name="menu_clients">Our Clients</constant>
+		<constant name="menu_contact">Contact us</constant>
+		<constant name="site_header"><![CDATA[Development  &  Consulting]]></constant>
+		<constant name="header_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		Sed non massa fringilla, auctor diam non, consectetur lorem.
+		</constant>
+		<constant name="header_btn_contact">CONTACT US</constant>
+		<constant name="header_btn_about">Who We Are</constant>
+		<constant name="btn_scroll">Scroll down</constant>
 	</language>
+	<language name="Hebrew" short="he">
+    </language>
 </document>
