@@ -1,12 +1,13 @@
 /**
  * Main Style Sheet
- * Site Name
+ * Way2cu Sote
  *
  * Copyright (c) 2015. by Way2CU, http://way2cu.com
- * Authors:
+ * Authors: Tal Reznic
  */
-
+@import url(http://fonts.googleapis.com/css?family=Expletus+Sans);
 body {
+	font-family: 'Expletus Sans', cursive;
 	background-color: white;
 	color: black;
 }
