@@ -9,7 +9,62 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<h1>It works!</h1>
+			<!-- Top Section of the site -->
+			<header>
+				<div class="inner_wrap">
+					<nav>
+						<a href="#"><cms:text constant="menu_home"/></a>
+						<a href="#"><cms:text constant="menu_about"/></a>
+						<a href="#"><cms:text constant="menu_portfolio"/></a>
+						<a href="#"><cms:text constant="menu_clients"/></a>
+						<a href="#"><cms:text constant="menu_contact"/></a>
+					</nav>
+					<h1><cms:text constant="site_header"/></h1>
+					<p><cms:text constant="header_desc"/></p>
+					<a href="#"><cms:text constant="header_btn_contact"/></a>
+					<a href="#"><cms:text constant="header_btn_about"/></a>
+					<a href="#"><cms:text constant="btn_scroll"/></a>
+				</div>
+			</header>
+			<!-- Sevices Section -->
+			<div class="services_wrap">
+
+				<div class="inner_wrap">
+					<cms:module
+								name="articles"
+								action="show"
+								text_id="main_service"
+								template="parts/article_header.xml"
+								/>
+					<div class="service">
+						<span><cms:raw file="../images/services/screen.svg"/></span>
+						<cms:module
+								name="articles"
+								action="show"
+								text_id="development_article"
+								template="parts/article_header.xml"
+								/>
+					</div>
+					<div class="service">
+						<span><cms:raw file="../images/services/speaker.svg"/></span>
+						<cms:module
+								name="articles"
+								action="show"
+								text_id="Advertising_article"
+								template="parts/article_header.xml"
+								/>
+					</div>
+					<div class="service">
+						<span><cms:raw file="../images/services/magnifying-glass.svg"/></span>
+						<cms:module
+								name="articles"
+								action="show"
+								text_id="consulting_article"
+								template="parts/article_header.xml"
+								/>
+					</div>
+				</div>
+			</div>
 		</body>
 	</html>
 </document>
