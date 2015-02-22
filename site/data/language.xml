@@ -15,6 +15,20 @@
 		<constant name="header_btn_contact">CONTACT US</constant>
 		<constant name="header_btn_about">Who We Are</constant>
 		<constant name="btn_scroll">Scroll down</constant>
+		<constant name="clients">Clients</constant>
+		<constant name="clients_desc">The Clients that work with us</constant>
+		<constant name="portfolio">Portfolio</constant>
+		<constant name="portfolio_controls">See More Site Designs</constant>
+		<constant name="mobile">All our sites are Mobile Friendly</constant>
+		<constant name="about">About us section title</constant>
+		<constant name="contact">Contact</constant>
+		<constant name="location">Street address, city, Israel</constant>
+		<constant name="email">Email:</constant>
+		<constant name="email_address">info@way2cu.com</constant>
+		<constant name="phone">Phone Numbers:</constant>
+		<constant name="number">+972 (9) 7654321</constant>
+		<constant name="social">Social:</constant>
+		<constant name="rights">Designed and Developed by Way2cu</constant>
 	</language>
 	<language name="Hebrew" short="he">
     </language>
