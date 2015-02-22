@@ -59,10 +59,27 @@ Site.on_load = function() {
 		.images.add('div.gallery_container a.image')
 		.controls.set_auto(3000)
 		clientGallery.images.set_center(true)
+		clientGallery.images.set_step_size(5)
 		clientGallery.images.set_spacing(20)
 		clientGallery.images.set_visible_count(5)
 		.controls.attach_next($('div.clients_wrap a.arrow.next'))
 		.controls.attach_previous($('div.clients_wrap a.arrow.previous'));
+	};
+
+
+
+	if ($('div.all_gallery a').length > 0) {
+		galleryPortfolio = new Caracal.Gallery.Slider();
+		galleryPortfolio
+		.images.set_container('div.all_gallery')
+		.images.add('div.all_gallery a.image')
+		.controls.set_auto(3000)
+		galleryPortfolio.images.set_step_size(3)
+		galleryPortfolio.images.set_center(true)
+		galleryPortfolio.images.set_spacing(20)
+		galleryPortfolio.images.set_visible_count(3)
+		.controls.attach_next($('div.gallery_control a.arrow.next'))
+		.controls.attach_previous($('div.gallery_control a.arrow.previous'));
 	};
 
 	/*
@@ -72,21 +89,6 @@ Site.on_load = function() {
 	$("ul.galleries_names li").eq(0).addClass("active");
 		gallery_type = new PageControl('div.galleries_images', 'div.all_gallery')
 		gallery_type.attachControls('ul.galleries_names li');
-
-	if ($('div.galleries_images a').length > 0) {
-		galleryPortfolio = new Caracal.Gallery.Slider();
-		galleryPortfolio
-		.images.set_container('div.galleries_images')
-		.images.add('div.galleries_images a.image')
-		.controls.set_auto(3000)
-		galleryPortfolio.images.set_step_size(3)
-		galleryPortfolio.images.set_center(true)
-		galleryPortfolio.images.set_spacing(20)
-		galleryPortfolio.images.set_visible_count(3)
-		galleryPortfolio.images.set_visible_count(3)
-		.controls.attach_next($('div.gallery_control a.arrow.next'))
-		.controls.attach_previous($('div.gallery_control a.arrow.previous'));
-	};
 };
 
 
