@@ -5,6 +5,7 @@
 	<html lang="$language" cms:eval="lang">
 		<head>
 			<title><cms:text constant="site_title"/></title>
+			 <cms:collection include="page_control,animation_chain"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
@@ -27,8 +28,7 @@
 				</div>
 			</header>
 			<!-- Sevices Section -->
-			<div class="services_wrap">
-
+			<div class="service_wrap">
 				<div class="inner_wrap">
 					<cms:module
 								name="articles"
@@ -42,7 +42,7 @@
 								name="articles"
 								action="show"
 								text_id="development_article"
-								template="parts/article_header.xml"
+								template="parts/article_header2.xml"
 								/>
 					</div>
 					<div class="service">
@@ -51,7 +51,7 @@
 								name="articles"
 								action="show"
 								text_id="Advertising_article"
-								template="parts/article_header.xml"
+								template="parts/article_header2.xml"
 								/>
 					</div>
 					<div class="service">
@@ -60,9 +60,129 @@
 								name="articles"
 								action="show"
 								text_id="consulting_article"
-								template="parts/article_header.xml"
+								template="parts/article_header2.xml"
 								/>
 					</div>
+				</div>
+			</div>
+			<!-- Clients Section -->
+			<div class="clients_wrap ">
+				<div class="inner_wrap">
+					<h2><cms:text constant="clients"/></h2>
+					<h3><cms:text constant="clients_desc"/></h3>
+					<div class="gallery_container">
+						<cms:module
+							name="gallery"
+							action="show_image_list"
+							group="clients_gallery"
+							random="1"
+							template="parts/image.xml"
+							/>
+
+					</div>
+					<a
+							href="javascript: void(0);"
+							class="arrow next"
+							>
+						</a>
+						<a
+							href="javascript: void(0);"
+							class="arrow previous"
+							>
+						</a>
+				</div>
+			</div>
+			<!-- Portfolio Section -->
+			<div class="portfolio_wrap">
+				<div class="inner_wrap">
+					<h2><cms:text constant="portfolio"/></h2>
+					<ul class="galleries_names">
+						<cms:module
+							name="gallery"
+							action="show_group_list"
+							container="way2cu_galleries"
+							template="parts/gallery_title.xml"
+							/>
+					</ul>
+					<div class="galleries_images">
+						<cms:module
+							name="gallery"
+							action="show_group_list"
+							container="way2cu_galleries"
+							template="parts/galleries.xml"
+							/>
+					</div>
+					<div class="gallery_control">
+						<h3><cms:text constant="portfolio_controls"/></h3>
+						<a
+							href="javascript: void(0);"
+							class="arrow next"
+							>
+						</a>
+						<a
+							href="javascript: void(0);"
+							class="arrow previous"
+							>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile Friendly Section -->
+			<div class="mobile_wrap">
+				<div class="inner_wrap">
+					<h2><cms:text constant="mobile"/></h2>
+					<cms:module
+								name="articles"
+								action="show"
+								text_id="mobile_friendly"
+								template="parts/article_no_header.xml"
+								/>
+				</div>
+			</div>
+			<!-- About us -->
+			<div class="about_wrap">
+				<div class="inner_wrap">
+					<h2><cms:text constant="about"/></h2>
+					<cms:module
+								name="articles"
+								action="show"
+								text_id="about_us"
+								template="parts/article_header2.xml"
+								/>
+				</div>
+			</div>
+			<!-- Contact Section -->
+			<div class="contact_wrap">
+				<div class="inner_wrap">
+					<h2><cms:text constant="contact"/></h2>
+					<h3><cms:text constant="location"/></h3>
+					<div class="form_wrap">
+						<cms:module
+					 				name="contact_form"
+					 				action="show"
+					 				text_id="contact_form"
+		 						/>
+					</div>
+
+					<div class="info_wrap">
+						<div class="info">
+							<h3><cms:text constant="email"/></h3>
+							<span><cms:text constant="email_address"/></span>
+						</div>
+						<div class="info">
+							<h3><cms:text constant="phone"/></h3>
+							<span><cms:text constant="number"/></span>
+						</div>
+						<div class="info">
+							<h3><cms:text constant="social"/></h3>
+							<span></span>
+						</div>
+					</div>
+
+					<div class="copyright">
+						<span><cms:text constant="rights"/></span>
+					</div>
+
 				</div>
 			</div>
 		</body>
