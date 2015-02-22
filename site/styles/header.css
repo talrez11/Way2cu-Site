@@ -1,0 +1,126 @@
+/**
+ * Main Style Sheet
+ * Way2cu Site
+ *
+ * Copyright (c) 2015. by Way2CU, http://way2cu.com
+ * Authors: Tal Reznic
+ */
+/*
+	Header CSS
+*/
+
+ header {
+ 	display: block;
+ 	background-image: url(../images/header/header-background.jpg);
+ 	background-repeat: no-repeat;
+ 	background-position: center;
+ 	background-size:1920px 1080px;
+ 	height: 1080px;
+ }
+
+ header div.inner_wrap {
+ 	display: block;
+ 	text-align: center;
+ }
+
+ header div.inner_wrap nav {
+ 	display: block;
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+ }
+
+header div.inner_wrap nav a {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+	border:1px solid transparent;
+	font-size: 1.4em;
+	color:white;
+	transition:all 0.6s;
+}
+
+header div.inner_wrap nav a:hover {
+	border:1px solid white;
+}
+
+header div.inner_wrap h1 {
+	display: block;
+	padding-top: 280px;
+	background-image: url(../images/header/logo-black);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 216px 250px;
+	color:white;
+	font-size: 3.2em;
+	font-weight: 400;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+header div.inner_wrap p {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 650px;
+	color:white;
+}
+
+header div.inner_wrap > a:nth-of-type(1){
+	display: inline-block;
+	vertical-align: top;
+	color:white;
+	text-decoration: none;
+	margin-right: 150px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 70px;
+	padding-right: 70px;
+	font-size: 1.9em;
+	border: 1px solid white;
+	border-radius: 8px;
+	transition:all 0.7s;
+}
+
+header div.inner_wrap > a:nth-of-type(1):hover {
+	background-color: white;
+	color:#68C39F;
+}
+
+header div.inner_wrap > a:nth-of-type(2) {
+	display: inline-block;
+	vertical-align: top;
+	color:white;
+	text-decoration: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 70px;
+	padding-right: 70px;
+	font-size: 1.9em;
+	border: 1px solid white;
+	border-radius: 8px;
+	transition:all 0.7s;
+}
+
+header div.inner_wrap > a:nth-of-type(2):hover {
+	background-color: white;
+	color:#68C39F;
+}
+
+header div.inner_wrap > a:nth-of-type(3) {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 30px;
+	background-image: url(../images/header/icon-arrow.svg);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 63px 63px;
+	width:150px;
+	height: 93px;
+	text-decoration: none;
+	color:white;
+}
