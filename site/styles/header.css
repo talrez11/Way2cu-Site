@@ -23,13 +23,13 @@
  	text-align: center;
  }
 
- header div.inner_wrap nav {
+ header nav {
  	display: block;
  	padding-top: 20px;
  	padding-bottom: 20px;
  }
 
-header div.inner_wrap nav a {
+header a {
 	display: inline-block;
 	vertical-align: top;
 	margin-right: 15px;
@@ -44,11 +44,11 @@ header div.inner_wrap nav a {
 	transition:all 0.6s;
 }
 
-header div.inner_wrap nav a:hover {
+header nav a:hover {
 	border:1px solid white;
 }
 
-header div.inner_wrap h1 {
+header  h1 {
 	display: block;
 	padding-top: 280px;
 	background-image: url(../images/header/logo-black);
@@ -61,10 +61,11 @@ header div.inner_wrap h1 {
 	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
-header div.inner_wrap p {
+header  p {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+	padding-bottom: 15px;
 	width: 650px;
 	color:white;
 }

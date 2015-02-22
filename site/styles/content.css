@@ -26,6 +26,7 @@
 
  p {
  	font-size: 1.3em;
+ 	margin-bottom: 0px;
  }
 
  .white {
@@ -47,7 +48,6 @@
  /*
 	End Site Reset
  */
-
 
 
 /*
@@ -264,6 +264,11 @@ div.portfolio_wrap div.inner_wrap ul.galleries_names li:hover {
 	background-color:#464646;
 }
 
+div.portfolio_wrap div.inner_wrap ul.galleries_names li.active {
+	color:white;
+	background-color:#464646;
+}
+
 div.portfolio_wrap div.inner_wrap div.galleries_images {
 	display: block;
 	position: relative;
@@ -280,18 +285,16 @@ div.portfolio_wrap div.inner_wrap div.galleries_images {
 
 div.all_gallery {
   position: absolute;
+  left: 0px;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 460px;
   opacity: 0;
 }
 
-div.all_gallery.visible {
-	opacity: 1;
-}
 
-div.portfolio_wrap div.inner_wrap div.galleries_images a.image.direct {
+div.galleries_images a.image.direct {
 	position: absolute;
 	top:0%;
 	left:-100%;
@@ -299,7 +302,14 @@ div.portfolio_wrap div.inner_wrap div.galleries_images a.image.direct {
 	text-decoration: none;
 	background-color: white;
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+	z-index: 1;
 
+}
+
+
+
+div.all_gallery.visible {
+	opacity: 1;
 }
 
 div.portfolio_wrap div.inner_wrap div.galleries_images a.image.direct div.desc {
