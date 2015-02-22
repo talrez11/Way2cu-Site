@@ -284,13 +284,13 @@ div.portfolio_wrap div.inner_wrap div.galleries_images {
 }
 
 div.all_gallery {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 460px;
-  opacity: 0;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 460px;
+	opacity: 0;
 }
 
 
