@@ -12,13 +12,13 @@
 		<constant name="header_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 		Sed non massa fringilla, auctor diam non, consectetur lorem.
 		</constant>
-		<constant name="header_btn_contact">CONTACT US</constant>
+		<constant name="header_btn_contact">Contact Us</constant>
 		<constant name="header_btn_about">Who We Are</constant>
 		<constant name="btn_scroll">Scroll down</constant>
 		<constant name="clients">Clients</constant>
 		<constant name="clients_desc">The Clients that work with us</constant>
 		<constant name="portfolio">Portfolio</constant>
-		<constant name="portfolio_controls">See More Site Designs</constant>
+		<constant name="portfolio_controls">See More Designs</constant>
 		<constant name="mobile">All our sites are Mobile Friendly</constant>
 		<constant name="about">About us section title</constant>
 		<constant name="contact">Contact</constant>
@@ -28,7 +28,7 @@
 		<constant name="phone">Phone Numbers:</constant>
 		<constant name="number">+972 (9) 7654321</constant>
 		<constant name="social">Social:</constant>
-		<constant name="rights">Designed and Developed by Way2cu</constant>
+		<constant name="copyright">Designed and developed by <![CDATA[<a href="http://way2cu.com">Way2CU</a></br>]]>All rights reserved.</constant>
 	</language>
 	<language name="Hebrew" short="he">
     </language>
