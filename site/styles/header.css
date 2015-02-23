@@ -9,6 +9,7 @@
 	Header CSS
 */
 
+
  header {
  	display: block;
  	background-image: url(../images/header/header-background.jpg);
@@ -16,11 +17,15 @@
  	background-position: center;
  	background-size:1920px 1080px;
  	height: 1080px;
+ 	max-width: 1920px;
  }
 
  header div.inner_wrap {
- 	display: block;
- 	text-align: center;
+  	display: block;
+  	text-align: center;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	position: relative;
  }
 
  header nav {
@@ -48,20 +53,27 @@ header nav a:hover {
 	border:1px solid white;
 }
 
-header  h1 {
+header h1 {
 	display: block;
-	padding-top: 280px;
-	background-image: url(../images/header/logo-black);
-	background-repeat: no-repeat;
-	background-position: top center;
-	background-size: 216px 250px;
 	color:white;
 	font-size: 3.2em;
 	font-weight: 400;
 	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
-header  p {
+header span {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url(../images/header/logo-black);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 216px 250px;
+	width: 216px;
+	height: 250px;
+}
+
+header p {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -124,4 +136,46 @@ header div.inner_wrap > a:nth-of-type(3) {
 	height: 93px;
 	text-decoration: none;
 	color:white;
+	-webkit-animation: bounce .6s infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-in-out;
+	-moz-animation: bounce .6s infinite;
+	-moz-animation-direction: alternate;
+	-moz-animation-timing-function: ease-in-out;
+	-ms-animation: bounce .6s infinite;
+	-ms-animation-direction: alternate;
+	-ms-animation-timing-function: ease-in-out;
+	animation: bounce .6s infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
 }
+
+@-webkit-keyframes bounce {
+	from{height: 93px}
+	to{height: 98px}
+}
+
+@-moz-keyframes bounce {
+	from{height: 93px}
+	to{height: 98px}
+}
+
+@-ms-keyframes bounce {
+	from{height: 93px}
+	to{height: 98px}
+}
+
+@keyframes bounce {
+	from{height: 93px}
+	to{height: 98px}
+}
+
+@media all and (max-width: 1024px) and (min-width: 768px){
+
+div.inner_wrap {
+	width:auto;
+}
+
+
+}
+
