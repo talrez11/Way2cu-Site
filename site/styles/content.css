@@ -62,18 +62,66 @@ div.wrap.whitebg div.inner_wrap {
 
 }
 
+div#about {
+	position: relative;
+	z-index: 50;
+}
+
 div.wrap.whitebg div.inner_wrap > span {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	background-image: url(../images/services/logo-color.svg);
 	background-repeat: no-repeat;
-	background-position: top center;
+	background-position: 0px 0px;
 	background-size: 216px 250px;
 	width: 216px;
 	height: 250px;
-	opacity: 0;
-	transition:all 0.5s;
+}
+
+.animation {
+	-webkit-animation-name: scrollImage;
+	-webkit-animation-delay: 0.95s;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation-name: scrollImage;
+	-moz-animation-delay: 0.95s;
+	-moz-animation-duration: 1s;
+	-moz-animation-fill-mode: forwards;
+
+	-ms-animation-name: scrollImage;
+	-ms-animation-delay: 0.95s;
+	-ms-animation-duration: 1s;
+	-ms-animation-fill-mode: forwards;
+
+	animation-name: scrollImage;
+	animation-delay: 0.95s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+
+
+
+}
+
+@-webkit-keyframes scrollImage {
+	from{background-position: 0px -250px;}
+	to{background-position: 0px 0px;}
+}
+
+@-moz-keyframes scrollImage {
+	from{background-position: 0px -250px;}
+	to{background-position: 0px 0px;}
+}
+
+@-ms-keyframes scrollImage {
+	from{background-position: 0px -250px;}
+	to{background-position: 0px 0px;}
+}
+
+@keyframes scrollImage {
+	from{background-position: 0px -250px;}
+	to{background-position: 0px 0px;}
 }
 
 div.wrap.whitebg div.inner_wrap > article {
@@ -194,6 +242,10 @@ div.wrap div.inner_wrap div.gallery_container a.image.direct {
 	margin-top:-35px;
 	left:-100%;
 	transition:all 0.5s;
+}
+
+div.wrap div.inner_wrap div.gallery_container a.image.direct.transit {
+	transition: none;
 }
 
 a.arrow.next {
@@ -340,6 +392,10 @@ div.wrap.greybg div.inner_wrap div.galleries_images a.image.direct div.desc p:nt
 	padding-right: 20px;
 	font-size: 1.1em;
 	color:black;
+}
+
+div.wrap.greybg div.gallery_control {
+	margin-top: 80px;
 }
 
 div.wrap.greybg div.gallery_control h3 {
