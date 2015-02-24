@@ -215,6 +215,7 @@ div.wrap div.inner_wrap {
 div.wrap div.inner_wrap h2 {
 	display: block;
 	text-align: center;
+	transition:all 1s;
 }
 
 div.wrap div.inner_wrap h3 {
