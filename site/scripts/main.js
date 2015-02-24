@@ -52,12 +52,7 @@ Site.on_load = function() {
 
 	Caracal.lightbox = new LightBox('a.image.direct', false, false, true);
 
-	//Scroll Function
-	$('a[href*=#]').bind('click', function(e) {
-	e.preventDefault(); //prevent the "normal" behaviour which would be a "hard" jump
-
-	var target = $(this).attr("href"); //Get the target
-	function elementsPosition(){
+	function resetPosition(){
 		 $('div.wrap.whitebg div.inner_wrap > span').removeClass('animation');
 		 $('div.wrap.whitebg div.inner_wrap > span').css('background-position','0px 0px');
 		 $('header span').css('position','relative');
@@ -67,25 +62,47 @@ Site.on_load = function() {
 		 $('header div.inner_wrap > a:nth-of-type(3)').css('display','block');
 
 	}
+
+	//Scroll Function
+	$('a[href*=#]').bind('click', function(e) {
+	e.preventDefault(); //prevent the "normal" behaviour which would be a "hard" jump
+
+	var target = $(this).attr("href"); //Get the target
+
 	if(target == "#about") {
+
 		$('div.wrap.whitebg div.inner_wrap > span').css('background-position', '0px -250px');
 		$('div.wrap.whitebg div.inner_wrap > span').addClass('animation');
-		$('header span').css('position','fixed');
-		$('header span').css('z-index','1');
-		$('header span').css('top','82px');
-		$('header span').css('left','50%');
-		$('header span').css('margin-left','-108px');
+		$('header span').css({'position':'fixed',
+							   'z-index':'1',
+							   'top':'82px',
+							   'left':'50%',
+							   'margin-left':'-108px'
+							});
 		$('header h1,header p').css('display','none');
 		$('header a').css('display','none');
 		$('html, body').stop().animate({ scrollTop: $(target).offset().top -82 }, 1500, function() {
 
+		  setTimeout(resetPosition,500);
 	     // location.hash = target;  //attach the hash (#jumptarget) to the pageurl
-		  setTimeout(elementsPosition,500);
-	});
+		});
 
 		return false;
 
 	}
+
+	if(target == "#clients") {
+		$('div.wrap div.inner_wrap h2').css('opacity','0');
+		$('html, body').stop().animate({ scrollTop: $(target).offset().top  }, 800, function() {
+	     location.hash = target;  //attach the hash (#jumptarget) to the pageurl
+	     $('div.wrap div.inner_wrap h2').css('opacity','1');
+		});
+
+		return false;
+
+	}
+
+
 
 	// perform animated scrolling by getting top-position of target-element and set it as scroll target
 	$('html, body').stop().animate({ scrollTop: $(target).offset().top  }, 800, function() {
@@ -128,10 +145,12 @@ Site.on_load = function() {
 	/*
 	*** script for showing each gallery in the gallery page
 	*/
+	$('ul.galleries_names li').on('click',function(){
+		var item = $(this);
+		var gallery_id = item.data('data-gallery');
+		galleryPortfolio.load_from_group(null, gallery_id);
+	});
 
-	$("ul.galleries_names li").eq(0).addClass("active");
-		gallery_type = new PageControl('div.galleries_images', 'div.all_gallery')
-		gallery_type.attachControls('ul.galleries_names li');
 };
 
 
