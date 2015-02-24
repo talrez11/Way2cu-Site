@@ -1,5 +1,5 @@
 <document>
-	<li>
+	<li data-gallery="$params['id']" cms:eval="data-gallery">
 		<cms:var param="name" multilanguage="yes"/>
 	</li>
 </document>
