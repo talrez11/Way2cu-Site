@@ -82,10 +82,11 @@ Site.on_load = function() {
 	/*
 	*** script for showing each gallery in Portfolio Gallery
 	*/
-	$('ul.galleries_names li').on('click',function(){
+	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
 		var gallery_id = item.data('gallery');
-		galleryPortfolio.load_from_group(null, gallery_id);
+		console.log(gallery_id);
+		galleryPortfolio.images.load_from_group(null, gallery_id,true);
 	});
 	// Function that resets position after scroll Animation
 	function resetPosition(){
@@ -101,7 +102,7 @@ Site.on_load = function() {
 
 
 	//Scroll Function
-	$('a[href*=#]').bind('click', function(e) {
+	$('a[href*=#]').on('click', function(e) {
 	e.preventDefault(); //prevent the "normal" behaviour which would be a "hard" jump
 
 	var target = $(this).attr("href"); //Get the target
@@ -109,8 +110,7 @@ Site.on_load = function() {
 	if(target == "#about") {
 		$('div.wrap.whitebg div.inner_wrap > span').css('background-position', '0px -250px');
 		$('div.wrap.whitebg div.inner_wrap > span').addClass('animation');
-		$('header span')
-						.css({'position':'fixed',
+		$('header span').css({'position':'fixed',
 							   'z-index':'1',
 							   'top':'82px',
 							   'left':'50%',
@@ -128,9 +128,9 @@ Site.on_load = function() {
 	}
 
 	if(target == "#clients") {
-		$('div.wrap div.inner_wrap h2').css('opacity','0');
+		$('div#clients  h2').css('opacity','0');
 		$('html, body').stop().animate({ scrollTop: $(target).offset().top  }, 800, function() {
-	     $('div.wrap div.inner_wrap h2').css('opacity','1');
+	     $('div#clients  h2').css('opacity','1');
 		});
 
 		return false;
