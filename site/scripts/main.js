@@ -50,43 +50,44 @@ Site.is_mobile = function() {
  */
 Site.on_load = function() {
 
-	Caracal.lightbox = new LightBox('a.image.direct', false, false, true);
+	Caracal.lightbox = new LightBox('a.image.direct.clients', false, false, true);
+	Caracal.lightbox1 = new LightBox('a.image.direct.portfolio', false, false, true);
     //Clients Gallery
-	if ($('div.gallery_container a').length > 0) {
-		clientGallery = new Caracal.Gallery.Slider();
-		clientGallery
-				.controls.attach_next($('div#clients.wrap a.arrow.next'))
-                .controls.attach_previous($('div#clients.wrap a.arrow.previous'))
-                .controls.set_auto(3000)
-                .images.set_container('div.gallery_container')
-                .images.add('div.gallery_container a.image')
-                .images.set_visible_count(5)
-                .images.set_center(true)
-                .images.set_spacing(20);
 
-	}
+	clientGallery = new Caracal.Gallery.Slider();
+	clientGallery
+			.controls.attach_next($('div#clients.wrap a.arrow.next'))
+            .controls.attach_previous($('div#clients.wrap a.arrow.previous'))
+            .controls.set_auto(3000)
+            .images.set_container(' div#clients div.gallery_container')
+            .images.add('div#clients div.gallery_container a.image')
+            .images.set_visible_count(5)
+            .images.set_center(true)
+            .images.set_spacing(20);
+
+
 	//Portfolio Gallery
-	if ($('div.all_gallery a').length > 0) {
-		galleryPortfolio = new Caracal.Gallery.Slider();
-		galleryPortfolio
-				.controls.attach_next($('div.gallery_control a.arrow.next'))
-				.controls.attach_previous($('div.gallery_control a.arrow.previous'))
-				.controls.set_auto(3000)
-				.images.set_container('div.all_gallery')
-				.images.add('div.all_gallery a.image')
-				.images.set_step_size(3)
-				.images.set_center(true)
-				.images.set_spacing(20)
-				.images.set_visible_count(3);
-	}
+	galleryPortfolio = new Caracal.Gallery.Slider();
+	galleryPortfolio
+			.controls.attach_next($('div.gallery_control a.arrow.next'))
+			.controls.attach_previous($('div.gallery_control a.arrow.previous'))
+			.controls.set_auto(3000)
+			.images.set_container('div.all_gallery')
+			.images.add('div.all_gallery a.image')
+			.images.set_step_size(3)
+			.images.set_center(true)
+			.images.set_spacing(20)
+			.images.set_visible_count(3);
 	/*
 	*** script for showing each gallery in Portfolio Gallery
 	*/
 	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
 		var gallery_id = item.data('gallery');
-		console.log(gallery_id);
-		galleryPortfolio.images.load_from_group(null, gallery_id,true);
+		galleryPortfolio.images.load_from_group(null,gallery_id)
+
+
+
 	});
 	// Function that resets position after scroll Animation
 	function resetPosition(){
