@@ -1,8 +1,8 @@
 <document>
 		<a
 		href="$params['image']"
-		class="image direct"
-		cms:eval="href"
+		class="image direct portfolio"
+		cms:eval="href,style"
 		>
 		<img
 			src="gallery::getThumbnailById($params['id'], null, 350 ,Thumbnail::CONSTRAIN_HEIGHT)"
@@ -15,3 +15,4 @@
 		</div>
 		</a>
 </document>
+<!-- style="'background-image: url('.$params['image'].')'" -->

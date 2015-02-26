@@ -1,7 +1,7 @@
 <document>
 	<a
 		href="$params['image']"
-		class="image direct"
+		class="image direct clients"
 		cms:eval="href"
 		>
 		<img
