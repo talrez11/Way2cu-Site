@@ -110,13 +110,13 @@ Site.on_load = function() {
 	Caracal.loader = new Caracal.Gallery.Loader();
 	Caracal.loader
 			.add_gallery(galleryPortfolio)
-			.images.set_constructor(callable);
+			.set_constructor(callable);
 
 	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
 		console.log(item);
 		var gallery_id = item.data('gallery');
-		Caracal.loader.images.load_by_group_id(gallery_id);
+		Caracal.loader.load_by_group_id(gallery_id);
 
 
 	});
