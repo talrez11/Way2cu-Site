@@ -706,7 +706,7 @@ Tablet Version
 	}
 
 	div.wrap div.inner_wrap div.gallery_container {
-		width: 880px;
+		width: 825px;
 	}
 
 	a.arrow.next {
@@ -715,6 +715,14 @@ Tablet Version
 
 	a.arrow.previous {
 		right: 30px;
+	}
+
+	div.wrap.greybg div.gallery_control a.arrow.next {
+		left: 315px;
+	}
+
+	div.wrap.greybg div.gallery_control a.arrow.previous {
+		right: 315px;
 	}
 
 	div#mobile div.inner_wrap {
