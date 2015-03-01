@@ -107,6 +107,7 @@ Site.on_load = function() {
 		return link;
 	}
 
+
 	Caracal.loader = new Caracal.Gallery.Loader();
 	Caracal.loader
 			.add_gallery(galleryPortfolio)
