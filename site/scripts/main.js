@@ -83,12 +83,14 @@ Site.on_load = function() {
 	*** script for showing each gallery in Portfolio Gallery
 	*/
 
-	function callable(data,container) {
+	function make_image(data) {
 		console.log(data);
-		var link = $('<a>').appendTo(container);
+		var link = $('<a>');
 		link
 			.attr('href', data.image)
-			.addClass("image direct portfolio")
+			.addClass("image")
+			.addClass("direct")
+			.addClass("portfolio")
 			.data('id', data.id);
 
 		var thumbnail = $('<img>').appendTo(link);
@@ -111,7 +113,7 @@ Site.on_load = function() {
 	Caracal.loader = new Caracal.Gallery.Loader();
 	Caracal.loader
 			.add_gallery(galleryPortfolio)
-			.set_constructor(callable);
+			.set_constructor(make_image);
 
 	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
