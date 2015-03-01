@@ -84,11 +84,44 @@ Site.on_load = function() {
 	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
 		var gallery_id = item.data('gallery');
-		galleryPortfolio.images.load_from_group(null,gallery_id)
-
-
+		galleryPortfolio
+			.controls.set_auto(3000)
+			.controls.attach_previous($('div.gallery_control a.arrow.previous'))
+			.controls.attach_next($('div.gallery_control a.arrow.next'))
+			.images.load_from_group(gallery_id)
+			.images.set_constructor(callable)
+			.images.set_container('div.all_gallery')
+			.images.add('div.all_gallery a.image ')
+			.images.set_step_size(3)
+			.images.set_center(true)
+			.images.set_spacing(20)
+			.images.set_visible_count(3);
 
 	});
+
+	function callable(data,container) {
+		console.log(data);
+		var link = $('<a>').appendTo(container);
+		link
+			.attr('href', data.image)
+			.addClass("image direct portfolio")
+			.data('id', data.id);
+
+		var thumbnail = $('<img>').appendTo(link);
+		thumbnail
+			.attr('src', data.thumbnail)
+			.attr('alt', data.title);
+
+		var desc = $('<div class="desc">').appendTo(link);
+		var header = $('<h2>').appendTo(desc);
+		header
+			.text(data.title);
+		var para = $('<p>').appendTo(desc);
+		para
+			.html(data.description);
+
+		return link;
+	}
 	// Function that resets position after scroll Animation
 	function resetPosition(){
 		 $('div.wrap.whitebg div.inner_wrap > span').removeClass('animation');
