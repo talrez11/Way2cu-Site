@@ -52,7 +52,6 @@ Site.on_load = function() {
 
 	Caracal.lightbox = new LightBox('a.image.direct.clients', false, false, true);
 	Caracal.lightbox1 = new LightBox('a.image.direct.portfolio', false, false, true);
-	Caracal.loader = new Caracal.Gallery.Loader();
 
     //Clients Gallery
 
@@ -83,6 +82,7 @@ Site.on_load = function() {
 	/*
 	*** script for showing each gallery in Portfolio Gallery
 	*/
+
 	function callable(data,container) {
 		console.log(data);
 		var link = $('<a>').appendTo(container);
@@ -106,14 +106,19 @@ Site.on_load = function() {
 
 		return link;
 	}
+
+	Caracal.loader = new Caracal.Gallery.Loader();
+	Caracal.loader
+			.add_gallery(galleryPortfolio)
+			.images.set_constructor(callable);
+
 	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
 		console.log(item);
 		var gallery_id = item.data('gallery');
-		Caracal.loader
-			.add_gallery(galleryPortfolio)
-			.images.load_by_group_id (gallery_id,null)
-			.images.set_constructor(callable);
+		Caracal.loader.images.load_by_group_id(gallery_id);
+
+
 	});
 
 	// Function that resets position after scroll Animation
