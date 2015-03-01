@@ -52,6 +52,8 @@ Site.on_load = function() {
 
 	Caracal.lightbox = new LightBox('a.image.direct.clients', false, false, true);
 	Caracal.lightbox1 = new LightBox('a.image.direct.portfolio', false, false, true);
+	Caracal.loader = new Caracal.Gallery.Loader();
+
     //Clients Gallery
 
 	clientGallery = new Caracal.Gallery.Slider();
@@ -82,7 +84,7 @@ Site.on_load = function() {
 	*** script for showing each gallery in Portfolio Gallery
 	*/
 	function callable(data,container) {
-		console.log(container);
+		console.log(data);
 		var link = $('<a>').appendTo(container);
 		link
 			.attr('href', data.image)
@@ -92,7 +94,6 @@ Site.on_load = function() {
 		var thumbnail = $('<img>').appendTo(link);
 		thumbnail
 			.attr('src', data.thumbnail)
-			.css('width','250px')
 			.attr('alt', data.title);
 
 		var desc = $('<div class="desc">').appendTo(link);
@@ -109,17 +110,10 @@ Site.on_load = function() {
 		var item = $(this);
 		console.log(item);
 		var gallery_id = item.data('gallery');
-		galleryPortfolio
-			.controls.set_auto(3000)
-			.images.load_from_group(gallery_id,null)
-			.images.set_constructor(callable)
-			.images.set_container('div.all_gallery')
-			.images.add('div.all_gallery a.image ')
-			.images.set_step_size(3)
-			.images.set_center(true)
-			.images.set_spacing(20)
-			.images.set_visible_count(3);
-
+		Caracal.loader
+			.add_gallery(galleryPortfolio)
+			.images.load_by_group_id (gallery_id,null)
+			.images.set_constructor(callable);
 	});
 
 	// Function that resets position after scroll Animation
