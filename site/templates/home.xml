@@ -12,14 +12,14 @@
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
 			<!-- Top Section of the site -->
 			<header id="top">
+				<nav>
+					<a href="#top"><cms:text constant="menu_home"/></a>
+					<a href="#about"><cms:text constant="menu_about"/></a>
+					<a href="#clients"><cms:text constant="menu_clients"/></a>
+					<a href="#portfolio"><cms:text constant="menu_portfolio"/></a>
+					<a href="#contact"><cms:text constant="menu_contact"/></a>
+				</nav>
 				<div class="inner_wrap">
-					<nav>
-						<a href="#top"><cms:text constant="menu_home"/></a>
-						<a href="#about"><cms:text constant="menu_about"/></a>
-						<a href="#clients"><cms:text constant="menu_clients"/></a>
-						<a href="#portfolio"><cms:text constant="menu_portfolio"/></a>
-						<a href="#contact"><cms:text constant="menu_contact"/></a>
-					</nav>
 					<span></span>
 					<h1><cms:text constant="site_header"/></h1>
 					<p><cms:text constant="header_desc"/></p>
