@@ -20,18 +20,24 @@
  	max-width: 1920px;
  }
 
+ header nav {
+	display: block;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: black;
+	transition:all 0.2s;
+ }
  header div.inner_wrap {
   	display: block;
   	text-align: center;
+  	padding-top: 100px;
  	margin-left: auto;
  	margin-right: auto;
  	position: relative;
- }
-
- header nav {
- 	display: block;
- 	padding-top: 20px;
- 	padding-bottom: 20px;
  }
 
 header a {
