@@ -84,7 +84,6 @@ Site.on_load = function() {
 	*/
 
 	function make_image(data) {
-		console.log(data);
 		var link = $('<a>');
 		link
 			.attr('href', data.image)
@@ -120,19 +119,32 @@ Site.on_load = function() {
 	Caracal.loader
 			.add_gallery(galleryPortfolio)
 			.set_constructor(make_image)
-			.set_thumbnail_size(300 ,2)
+			.set_thumbnail_size(300 ,Caracal.Gallery.Constraint.HEIGHT)
 			.add_callback(image_loaded)
 
-	$('ul.galleries_names li').on('click',function() {
+	var galleryList = $('ul.galleries_names li');
+
+	galleryList.on('click',function(event) {
+		event.preventDefault();
 		var item = $(this);
+		galleryList.not(item).removeClass('active')
 		var gallery_id = item.data('gallery');
 		Caracal.loader.load_by_group_id(gallery_id);
+		item.addClass('active');
+	});
 
+	// Function For Active Men Item
 
+	var menuItems = $('header nav a');
+	menuItems.on('click',function(){
+		var link = $(this);
+		menuItems.not(link).removeClass('activeLink');
+		link.addClass('activeLink');
 	});
 
 	// Function that resets position after scroll Animation
 	function resetPosition(){
+		$('header nav').css('opacity','1');
 		 $('div.wrap.whitebg div.inner_wrap > span').removeClass('animation');
 		 $('div.wrap.whitebg div.inner_wrap > span').css('background-position','0px 0px');
 		 $('header span').css('position','relative');
@@ -149,8 +161,9 @@ Site.on_load = function() {
 	e.preventDefault(); //prevent the "normal" behaviour which would be a "hard" jump
 
 	var target = $(this).attr("href"); //Get the target
-
-	if(target == "#about") {
+    var aboutPosition = $('div#about').offset().top;
+	if(target == "#about" && window.scrollY < aboutPosition) {
+		$('header nav').css('opacity','0');
 		$('div.wrap.whitebg div.inner_wrap > span').css('background-position', '0px -250px');
 		$('div.wrap.whitebg div.inner_wrap > span').addClass('animation');
 		$('header span').css({'position':'fixed',
@@ -172,14 +185,14 @@ Site.on_load = function() {
 
 	if(target == "#clients") {
 		$('div#clients  h2').css('opacity','0');
-		$('html, body').stop().animate({ scrollTop: $(target).offset().top  }, 800, function() {
+		$('html, body').stop().animate({ scrollTop: $(target).offset().top -82  }, 1000, function() {
 	     $('div#clients  h2').css('opacity','1');
 		});
 
 		return false;
 	}
 	// perform animated scrolling by getting top-position of target-element and set it as scroll target
-	$('html, body').stop().animate({ scrollTop: $(target).offset().top  }, 800, function() {
+	$('html, body').stop().animate({ scrollTop: $(target).offset().top -82  }, 1000, function() {
 	     location.hash = target;  //attach the hash (#jumptarget) to the pageurl
 		});
 
