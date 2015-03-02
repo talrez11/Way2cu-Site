@@ -26,7 +26,6 @@ h3 {
 
 p {
 	font-size: 1.3em;
-	margin-bottom: 0px;
 }
 
 div.inner_wrap {
@@ -303,6 +302,7 @@ div.wrap.greybg div.inner_wrap ul.galleries_names {
 div.wrap.greybg div.inner_wrap ul.galleries_names li {
 	display: inline-block;
 	vertical-align: top;
+	margin-bottom: 40px;
 	margin-right: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -331,9 +331,6 @@ div.wrap.greybg div.inner_wrap div.galleries_images {
 	position: relative;
 	overflow: hidden;
 	height:460px;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	margin-top: 40px;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -344,7 +341,7 @@ div.all_gallery {
 	left: 0px;
 	top: 0px;
 	left: 0px;
-	width: 100%;
+	width: 102%;
 	height: 460px;
 	opacity: 1;
 }
@@ -367,9 +364,18 @@ div.galleries_images a.image.direct.portfolio.transit {
 }
 
 
-
 div.all_gallery.visible {
 	opacity: 1;
+}
+
+div.galleries_images a.image.direct.portfolio div.img_container {
+	display: block;
+	height: 270px;
+	overflow: hidden;
+}
+
+div.galleries_images a.image.direct.portfolio div.img_container img {
+	width: 100%;
 }
 
 .greybg {
@@ -378,7 +384,7 @@ div.all_gallery.visible {
 
 div.wrap.greybg div.inner_wrap div.galleries_images a.image.direct div.desc {
 	display: block;
-	width: 350px;
+	width: 300px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	background-color: white;
@@ -400,7 +406,7 @@ div.wrap.greybg div.inner_wrap div.galleries_images a.image.direct div.desc p:nt
 }
 
 div.wrap.greybg div.gallery_control {
-	margin-top: 80px;
+
 }
 
 div.wrap.greybg div.gallery_control h3 {
@@ -715,6 +721,14 @@ Tablet Version
 
 	a.arrow.previous {
 		right: 30px;
+	}
+
+	div.galleries_images a.image.direct.portfolio {
+		width: 250px;
+	}
+
+	div.wrap.greybg div.inner_wrap div.galleries_images a.image.direct div.desc {
+		width: 250px;
 	}
 
 	div.wrap.greybg div.gallery_control a.arrow.next {
