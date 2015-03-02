@@ -4,15 +4,18 @@
 		class="image direct portfolio"
 		cms:eval="href,style"
 		>
-		<img
-			src="gallery::getThumbnailById($params['id'], null, 350 ,Thumbnail::CONSTRAIN_HEIGHT)"
-			alt="$params['title'][$language]"
-			cms:eval="src,alt"
-			/>
+		<div class="img_container">
+			<img
+				src="gallery::getThumbnailById($params['id'], null, 300 ,Thumbnail::CONSTRAIN_HEIGHT)"
+				alt="$params['title'][$language]"
+				cms:eval="src,alt"
+				/>
+		</div>
 		<div class="desc">
 		<cms:markdown param="title" multilanguage="yes"/>
 		<cms:markdown param="description" multilanguage="yes"/>
 		</div>
 		</a>
 </document>
+
 <!-- style="'background-image: url('.$params['image'].')'" -->

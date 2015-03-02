@@ -109,7 +109,7 @@
 					<div class="galleries_images">
 						<cms:module
 							name="gallery"
-							action="show_group_list"
+							action="show_group"
 							container="way2cu_galleries"
 							template="parts/galleries.xml"
 							/>
