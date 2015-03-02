@@ -114,7 +114,6 @@ Site.on_load = function() {
 		Caracal.lightbox1 = new LightBox('a.image.direct.portfolio', false, false, true);
 	}
 
-
 	Caracal.loader = new Caracal.Gallery.Loader();
 	Caracal.loader
 			.add_gallery(galleryPortfolio)
@@ -133,7 +132,7 @@ Site.on_load = function() {
 		item.addClass('active');
 	});
 
-	// Function For Active Men Item
+	// Function For Active Menu Item
 
 	var menuItems = $('header nav a');
 	menuItems.on('click',function(){
