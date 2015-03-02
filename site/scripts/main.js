@@ -75,9 +75,9 @@ Site.on_load = function() {
 			.controls.set_auto(3000)
 			.images.set_container('div.all_gallery')
 			.images.add('div.all_gallery a.image')
-			.images.set_step_size(3)
+			.images.set_step_size(1)
 			.images.set_center(true)
-			.images.set_spacing(20)
+			.images.set_spacing(40)
 			.images.set_visible_count(3);
 	/*
 	*** script for showing each gallery in Portfolio Gallery
@@ -88,36 +88,43 @@ Site.on_load = function() {
 		var link = $('<a>');
 		link
 			.attr('href', data.image)
-			.addClass("image")
-			.addClass("direct")
-			.addClass("portfolio")
+			.addClass("image direct portfolio")
 			.data('id', data.id);
 
-		var thumbnail = $('<img>').appendTo(link);
+		var image_container = $('<div class="img_container">').appendTo(link);
+		image_container
+				.css('height','270px')
+				.css('overflow','hidden');
+
+		var thumbnail = $('<img>').appendTo(image_container);
 		thumbnail
 			.attr('src', data.thumbnail)
-			.attr('alt', data.title);
+			.attr('alt', data.title)
+			.css('width','100%');
 
 		var desc = $('<div class="desc">').appendTo(link);
-		var header = $('<h2>').appendTo(desc);
+		var header = $('<p>').appendTo(desc);
 		header
 			.text(data.title);
-		var para = $('<p>').appendTo(desc);
-		para
-			.html(data.description);
+		var para = $(data.description).appendTo(desc);
 
 		return link;
+	}
+
+	function image_loaded() {
+		Caracal.lightbox1 = new LightBox('a.image.direct.portfolio', false, false, true);
 	}
 
 
 	Caracal.loader = new Caracal.Gallery.Loader();
 	Caracal.loader
 			.add_gallery(galleryPortfolio)
-			.set_constructor(make_image);
+			.set_constructor(make_image)
+			.set_thumbnail_size(300 ,2)
+			.add_callback(image_loaded)
 
 	$('ul.galleries_names li').on('click',function() {
 		var item = $(this);
-		console.log(item);
 		var gallery_id = item.data('gallery');
 		Caracal.loader.load_by_group_id(gallery_id);
 
