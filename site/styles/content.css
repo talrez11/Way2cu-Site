@@ -52,7 +52,7 @@ div.wrap {
 }
 
 
-div#about {
+div#services {
 	position: relative;
 	z-index: 50;
 }
@@ -186,6 +186,7 @@ div.wrap.whitebg div.service article p {
 	padding-right: 30px;
 	font-weight: 400;
 }
+
 /*
 clients Section
 */
