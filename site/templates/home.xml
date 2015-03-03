@@ -19,18 +19,15 @@
 					<a href="#portfolio"><cms:text constant="menu_portfolio"/></a>
 					<a href="#contact"><cms:text constant="menu_contact"/></a>
 				</nav>
-				<div class="inner_wrap">
-					<span></span>
-					<h1><cms:text constant="site_header"/></h1>
-					<p><cms:text constant="header_desc"/></p>
-					<a href="#contact"><cms:text constant="header_btn_contact"/></a>
-					<a href="#mobile"><cms:text constant="header_btn_about"/></a>
-					<a href="#about"><cms:text constant="btn_scroll"/></a>
-				</div>
+				<span></span>
+				<h1><cms:text constant="site_header"/></h1>
+				<p><cms:text constant="header_desc"/></p>
+				<a href="#contact"><cms:text constant="header_btn_contact"/></a>
+				<a href="#mobile"><cms:text constant="header_btn_about"/></a>
+				<a href="#about"><cms:text constant="btn_scroll"/></a>
 			</header>
-			<!-- Sevices Section -->
+			<!-- Services Section -->
 			<div id="about" class="wrap whitebg">
-				<div class="inner_wrap">
 					<span></span>
 					<cms:module
 								name="articles"
@@ -65,13 +62,16 @@
 								template="parts/article_header2.xml"
 								/>
 					</div>
-				</div>
 			</div>
 			<!-- Clients Section -->
 			<div id="clients" class="wrap">
-				<div class="inner_wrap">
 					<h2><cms:text constant="clients"/></h2>
 					<h3><cms:text constant="clients_desc"/></h3>
+						<a
+							href="javascript: void(0);"
+							class="arrow next"
+							>
+						</a>
 					<div class="gallery_container">
 						<cms:module
 							name="gallery"
@@ -80,23 +80,15 @@
 							random="1"
 							template="parts/image.xml"
 							/>
-
 					</div>
-					<a
-							href="javascript: void(0);"
-							class="arrow next"
-							>
-						</a>
 						<a
 							href="javascript: void(0);"
 							class="arrow previous"
 							>
 						</a>
-				</div>
 			</div>
 			<!-- Portfolio Section -->
 			<div id="portfolio" class="wrap greybg">
-				<div class="inner_wrap">
 					<h2><cms:text constant="portfolio"/></h2>
 					<ul class="galleries_names">
 						<cms:module
@@ -127,11 +119,9 @@
 							>
 						</a>
 					</div>
-				</div>
 			</div>
 			<!-- Mobile Friendly Section -->
 			<div id="mobile" class="wrap whitebg">
-				<div class="inner_wrap">
 					<h2><cms:text constant="mobile"/></h2>
 					<cms:module
 								name="articles"
@@ -139,11 +129,9 @@
 								text_id="mobile_friendly"
 								template="parts/article_no_header.xml"
 								/>
-				</div>
 			</div>
 			<!-- About us -->
 			<div class="wrap greybg">
-				<div class="inner_wrap">
 					<h2><cms:text constant="about"/></h2>
 					<cms:module
 								name="articles"
@@ -151,11 +139,9 @@
 								text_id="about_us"
 								template="parts/article_header2.xml"
 								/>
-				</div>
 			</div>
 			<!-- Contact Section -->
 			<div id="contact" class="wrap darkgreybg">
-				<div class="inner_wrap">
 					<h2><cms:text constant="contact"/></h2>
 					<h3><cms:text constant="location"/></h3>
 					<div class="form_wrap">
@@ -165,7 +151,6 @@
 					 				text_id="contact_form"
 		 						/>
 					</div>
-
 					<div class="info_wrap">
 						<div class="info">
 							<h3><cms:text constant="email"/></h3>
@@ -180,7 +165,6 @@
 							<span></span>
 						</div>
 					</div>
-				</div>
 			</div>
 			<!-- Bottom Section of the site -->
 			<footer>
