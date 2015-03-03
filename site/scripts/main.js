@@ -24,9 +24,11 @@ Site.is_mobile = function() {
 	if ('mobile_version' in Site.variable_cache) {
 		result = Site.variable_cache['mobile_version'];
 
+
 	} else {
 		// detect if site is mobile
 		var elements = document.getElementsByName('viewport');
+
 
 		// check all tags and find `meta`
 		for (var i=0, count=elements.length; i<count; i++) {
@@ -44,6 +46,8 @@ Site.is_mobile = function() {
 
 	return result;
 };
+
+
 
 /**
  * Function called when document and images have been completely loaded.
@@ -66,6 +70,8 @@ Site.on_load = function() {
             .images.set_center(true)
             .images.set_spacing(20);
 
+     if (Site.is_mobile()) clientGallery.images.set_visible_count(1);
+
 
 	//Portfolio Gallery
 	galleryPortfolio = new Caracal.Gallery.Slider();
@@ -79,6 +85,7 @@ Site.on_load = function() {
 			.images.set_center(true)
 			.images.set_spacing(40)
 			.images.set_visible_count(3);
+	 if (Site.is_mobile()) galleryPortfolio.images.set_visible_count(1);
 	/*
 	*** script for showing each gallery in Portfolio Gallery
 	*/
@@ -141,16 +148,64 @@ Site.on_load = function() {
 		link.addClass('activeLink');
 	});
 
+	// Function For Activation Menu Items With Scroll Animation
+
+	$(window).scroll(function() {
+		var links = $('header nav a');
+  		var services  = $('div#services').offset().top -150;
+  		var client = $('div#clients').offset().top -150;
+  		var portfolio = $('div#portfolio').offset().top -150;
+  		var mobile = $('div#mobile').offset().top -150;
+  		var about = $('div#about_us').offset().top -150;
+  		var contact = $('div#contact').offset().top -150;
+  		if(window.scrollY <= services) {
+  			links.eq(0).addClass('activeLink');
+  			links.not(links.eq(0)).removeClass('activeLink');
+  		}
+
+  		if(window.scrollY >= services &&  window.scrollY <= client) {
+  			links.eq(1).addClass('activeLink');
+  			links.not(links.eq(1)).removeClass('activeLink');
+  		}
+
+  		if(window.scrollY > client &&  window.scrollY <= portfolio) {
+  			links.eq(2).addClass('activeLink');
+  			links.not(links.eq(2)).removeClass('activeLink');
+  		}
+
+  		if(window.scrollY > portfolio && window.scrollY <= mobile) {
+  			links.eq(3).addClass('activeLink');
+  			links.not(links.eq(3)).removeClass('activeLink');
+  		}
+
+  		if(window.scrollY > mobile && window.scrollY <= about) {
+  			links.eq(4).addClass('activeLink');
+  			links.not(links.eq(4)).removeClass('activeLink');
+  		}
+
+  		if(window.scrollY > about && window.scrollY <= contact) {
+  			links.eq(5).addClass('activeLink');
+  			links.not(links.eq(5)).removeClass('activeLink');
+  		}
+
+  		if(window.scrollY > contact) {
+  			links.eq(6).addClass('activeLink');
+  			links.not(links.eq(6)).removeClass('activeLink');
+  		}
+
+	});
+
+
 	// Function that resets position after scroll Animation
 	function resetPosition(){
 		$('header nav').css('opacity','1');
-		 $('div.wrap.whitebg div.inner_wrap > span').removeClass('animation');
-		 $('div.wrap.whitebg div.inner_wrap > span').css('background-position','0px 0px');
+		 $('div.wrap.whitebg > span').removeClass('animation');
+		 $('div.wrap.whitebg > span').css('background-position','0px 0px');
 		 $('header span').css('position','relative');
 	     $('header span').css('top','0px');
 	     $('header h1,header p').css('display','block');
 		 $('header a').css('display','inline-block');
-		 $('header div.inner_wrap > a:nth-of-type(3)').css('display','block');
+		 $('header > a:nth-of-type(3)').css('display','block');
 	}
 
 
@@ -160,14 +215,14 @@ Site.on_load = function() {
 	e.preventDefault(); //prevent the "normal" behaviour which would be a "hard" jump
 
 	var target = $(this).attr("href"); //Get the target
-    var aboutPosition = $('div#about').offset().top;
-	if(target == "#about" && window.scrollY < aboutPosition) {
+    var aboutPosition = $('div#services').offset().top;
+	if(target == "#services" && window.scrollY < aboutPosition) {
 		$('header nav').css('opacity','0');
-		$('div.wrap.whitebg div.inner_wrap > span').css('background-position', '0px -250px');
-		$('div.wrap.whitebg div.inner_wrap > span').addClass('animation');
+		$('div.wrap.whitebg > span').css('background-position', '0px -250px');
+		$('div.wrap.whitebg > span').addClass('animation');
 		$('header span').css({'position':'fixed',
 							   'z-index':'1',
-							   'top':'82px',
+							   'top':'0px',
 							   'left':'50%',
 							   'margin-left':'-108px'
 							});
