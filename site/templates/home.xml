@@ -12,22 +12,26 @@
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
 			<!-- Top Section of the site -->
 			<header id="top">
+			<cms:desktop>
 				<nav>
 					<a href="#top"><cms:text constant="menu_home"/></a>
-					<a href="#about"><cms:text constant="menu_about"/></a>
+					<a href="#services"><cms:text constant="menu_about"/></a>
 					<a href="#clients"><cms:text constant="menu_clients"/></a>
 					<a href="#portfolio"><cms:text constant="menu_portfolio"/></a>
+					<a href="#mobile"><cms:text constant="menu_mobile"/></a>
+					<a href="#about_us"><cms:text constant="menu_about_us"/></a>
 					<a href="#contact"><cms:text constant="menu_contact"/></a>
 				</nav>
+			</cms:desktop>
 				<span></span>
 				<h1><cms:text constant="site_header"/></h1>
 				<p><cms:text constant="header_desc"/></p>
 				<a href="#contact"><cms:text constant="header_btn_contact"/></a>
 				<a href="#mobile"><cms:text constant="header_btn_about"/></a>
-				<a href="#about"><cms:text constant="btn_scroll"/></a>
+				<a href="#services"><cms:text constant="btn_scroll"/></a>
 			</header>
 			<!-- Services Section -->
-			<div id="about" class="wrap whitebg">
+			<div id="services" class="wrap whitebg">
 					<span></span>
 					<cms:module
 								name="articles"
@@ -131,7 +135,7 @@
 								/>
 			</div>
 			<!-- About us -->
-			<div class="wrap greybg">
+			<div id="about_us" class="wrap greybg">
 					<h2><cms:text constant="about"/></h2>
 					<cms:module
 								name="articles"
