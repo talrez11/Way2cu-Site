@@ -155,7 +155,7 @@ Site.on_load = function() {
 
 
 
-	//Scroll Function
+	//Anchor Scroll Function
 	$('a[href*=#]').on('click', function(e) {
 	e.preventDefault(); //prevent the "normal" behaviour which would be a "hard" jump
 
