@@ -30,7 +30,8 @@
 		<constant name="phone">Phone Numbers:</constant>
 		<constant name="number">+972 (9) 7654321</constant>
 		<constant name="social">Social:</constant>
-		<constant name="copyright">Designed and developed by <![CDATA[<a href="http://way2cu.com">Way2CU</a></br>]]>All rights reserved.</constant>
+		<constant name="copyright">Designed and developed by <![CDATA[<a href="http://way2cu.com">Way2CU</a>.</br>]]>All rights reserved.</constant>
+
 	</language>
 	<language name="Hebrew" short="he">
     </language>
