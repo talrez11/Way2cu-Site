@@ -85,6 +85,7 @@ Site.on_load = function() {
 			.images.set_center(true)
 			.images.set_spacing(40)
 			.images.set_visible_count(3);
+
 	 if (Site.is_mobile()) galleryPortfolio.images.set_visible_count(1);
 	/*
 	*** script for showing each gallery in Portfolio Gallery
@@ -158,37 +159,37 @@ Site.on_load = function() {
   		var mobile = $('div#mobile').offset().top -150;
   		var about = $('div#about_us').offset().top -150;
   		var contact = $('div#contact').offset().top -150;
-  		if(window.scrollY <= services) {
+  		if($(window).scrollTop() <= services) {
   			links.eq(0).addClass('activeLink');
   			links.not(links.eq(0)).removeClass('activeLink');
   		}
 
-  		if(window.scrollY >= services &&  window.scrollY <= client) {
+  		if($(window).scrollTop() >= services &&  $(window).scrollTop() <= client) {
   			links.eq(1).addClass('activeLink');
   			links.not(links.eq(1)).removeClass('activeLink');
   		}
 
-  		if(window.scrollY > client &&  window.scrollY <= portfolio) {
+  		if($(window).scrollTop() > client &&  $(window).scrollTop() <= portfolio) {
   			links.eq(2).addClass('activeLink');
   			links.not(links.eq(2)).removeClass('activeLink');
   		}
 
-  		if(window.scrollY > portfolio && window.scrollY <= mobile) {
+  		if($(window).scrollTop() > portfolio && $(window).scrollTop() <= mobile) {
   			links.eq(3).addClass('activeLink');
   			links.not(links.eq(3)).removeClass('activeLink');
   		}
 
-  		if(window.scrollY > mobile && window.scrollY <= about) {
+  		if($(window).scrollTop() > mobile && $(window).scrollTop() <= about) {
   			links.eq(4).addClass('activeLink');
   			links.not(links.eq(4)).removeClass('activeLink');
   		}
 
-  		if(window.scrollY > about && window.scrollY <= contact) {
+  		if($(window).scrollTop() > about && $(window).scrollTop() <= contact) {
   			links.eq(5).addClass('activeLink');
   			links.not(links.eq(5)).removeClass('activeLink');
   		}
 
-  		if(window.scrollY > contact) {
+  		if($(window).scrollTop() > contact) {
   			links.eq(6).addClass('activeLink');
   			links.not(links.eq(6)).removeClass('activeLink');
   		}
@@ -216,7 +217,7 @@ Site.on_load = function() {
 
 	var target = $(this).attr("href"); //Get the target
     var aboutPosition = $('div#services').offset().top;
-	if(target == "#services" && window.scrollY < aboutPosition) {
+	if(target == "#services" && $(window).scrollTop() < aboutPosition) {
 		$('header nav').css('opacity','0');
 		$('div.wrap.whitebg > span').css('background-position', '0px -250px');
 		$('div.wrap.whitebg > span').addClass('animation');
