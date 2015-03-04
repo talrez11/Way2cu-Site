@@ -430,14 +430,14 @@ div#mobile h2 {
 	text-align: center;
 }
 
-div#mobile article {
+div#mobile div.article {
 	display: block;
 	background-image: url(../images/mobile-friendly/mobile-friendly.jpg);
 	background-repeat: no-repeat;
 	background-position: right 30px;
 }
 
-div#mobile article p {
+div#mobile div.article p {
 	display: block;
 	width: 400px;
 	padding-top: 30px;
@@ -661,6 +661,10 @@ Tablet Version
 		width: auto;
 	}
 
+	header nav a {
+		font-size:1.1em;
+	}
+
 	div.wrap.whitebg div.service:nth-of-type(2):before {
 		width: 0px;
 	}
@@ -698,7 +702,7 @@ Tablet Version
 	}
 
 
-	div#mobile article {
+	div#mobile div.article {
 		display: block;
 		background-image: url(../images/mobile-friendly/mobile-friendly.jpg);
 		background-repeat: no-repeat;
@@ -707,7 +711,7 @@ Tablet Version
 		width: auto;
 	}
 
-	div#mobile article p {
+	div#mobile div.article p {
 		width: auto;
 	}
 
