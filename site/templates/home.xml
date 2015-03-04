@@ -28,7 +28,9 @@
 				<p><cms:text constant="header_desc"/></p>
 				<a href="#contact"><cms:text constant="header_btn_contact"/></a>
 				<a href="#mobile"><cms:text constant="header_btn_about"/></a>
+			<cms:desktop>
 				<a href="#services"><cms:text constant="btn_scroll"/></a>
+			</cms:desktop>
 			</header>
 			<!-- Services Section -->
 			<div id="services" class="wrap whitebg">
@@ -102,14 +104,7 @@
 							template="parts/gallery_title.xml"
 							/>
 					</ul>
-					<div class="galleries_images">
-						<cms:module
-							name="gallery"
-							action="show_group"
-							container="way2cu_galleries"
-							template="parts/galleries.xml"
-							/>
-					</div>
+			<cms:mobile>
 					<div class="gallery_control">
 						<h3><cms:text constant="portfolio_controls"/></h3>
 						<a
@@ -123,6 +118,30 @@
 							>
 						</a>
 					</div>
+			</cms:mobile>
+					<div class="galleries_images">
+						<cms:module
+							name="gallery"
+							action="show_group"
+							container="way2cu_galleries"
+							template="parts/galleries.xml"
+							/>
+					</div>
+			<cms:desktop>
+					<div class="gallery_control">
+						<h3><cms:text constant="portfolio_controls"/></h3>
+						<a
+							href="javascript: void(0);"
+							class="arrow next"
+							>
+						</a>
+						<a
+							href="javascript: void(0);"
+							class="arrow previous"
+							>
+						</a>
+					</div>
+			</cms:desktop>
 			</div>
 			<!-- Mobile Friendly Section -->
 			<div id="mobile" class="wrap whitebg">
@@ -148,13 +167,7 @@
 			<div id="contact" class="wrap darkgreybg">
 					<h2><cms:text constant="contact"/></h2>
 					<h3><cms:text constant="location"/></h3>
-					<div class="form_wrap">
-						<cms:module
-					 				name="contact_form"
-					 				action="show"
-					 				text_id="contact_form"
-		 						/>
-					</div>
+			<cms:mobile>
 					<div class="info_wrap">
 						<div class="info">
 							<h3><cms:text constant="email"/></h3>
@@ -169,6 +182,30 @@
 							<span></span>
 						</div>
 					</div>
+			</cms:mobile>
+					<div class="form_wrap">
+						<cms:module
+					 				name="contact_form"
+					 				action="show"
+					 				text_id="contact_form"
+		 						/>
+					</div>
+			<cms:desktop>
+					<div class="info_wrap">
+						<div class="info">
+							<h3><cms:text constant="email"/></h3>
+							<span><cms:text constant="email_address"/></span>
+						</div>
+						<div class="info">
+							<h3><cms:text constant="phone"/></h3>
+							<span><cms:text constant="number"/></span>
+						</div>
+						<div class="info">
+							<h3><cms:text constant="social"/></h3>
+							<span></span>
+						</div>
+					</div>
+			</cms:desktop>
 			</div>
 			<!-- Bottom Section of the site -->
 			<footer>

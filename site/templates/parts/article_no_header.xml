@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../../units/schema/template.dtd">
 <document>
-	<article>
+
+	<div class="article">
 		<cms:markdown param="content" multilanguage="yes"/>
-	</article>
+	</div>
 </document>
