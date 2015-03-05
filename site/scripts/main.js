@@ -150,16 +150,19 @@ Site.on_load = function() {
 	});
 
 	// Function For Activation Menu Items With Scroll Animation
-	$(window).scroll(function(){
-    var footerPosition = $('footer').offset().top;
-    var h =($('footer').css('height'));
-    var position = $(this).scrollTop();
-    if(position >= (footerPosition - h)){
-        alert('Hello');
-    }
 
-});
-
+	$(window).scroll(function() {
+		var links = $('header nav a');
+  		var services  = $('div#services').offset().top -150;
+  		var client = $('div#clients').offset().top -150;
+  		var portfolio = $('div#portfolio').offset().top -150;
+  		var mobile = $('div#mobile').offset().top -150;
+  		var about = $('div#about_us').offset().top -150;
+  		var contact = $('div#contact').offset().top -150;
+  		if($(window).scrollTop() <= services) {
+  			links.eq(0).addClass('activeLink');
+  			links.not(links.eq(0)).removeClass('activeLink');
+  		}
 
   		if($(window).scrollTop() >= services &&  $(window).scrollTop() <= client) {
   			links.eq(1).addClass('activeLink');
