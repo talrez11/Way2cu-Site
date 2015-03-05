@@ -150,46 +150,43 @@ Site.on_load = function() {
 	});
 
 	// Function For Activation Menu Items With Scroll Animation
+	$(window).scroll(function(){
+    var footerPosition = $('footer').offset().top;
+    var h =($('footer').css('height'));
+    var position = $(this).scrollTop();
+    if(position >= (footerPosition - h)){
+        alert('Hello');
+    }
 
-	$(window).scroll(function() {
-		var links = $('header nav a');
-  		var services  = $('div#services').offset().top -150;
-  		var client = $('div#clients').offset().top -150;
-  		var portfolio = $('div#portfolio').offset().top -150;
-  		var mobile = $('div#mobile').offset().top -150;
-  		var about = $('div#about_us').offset().top -150;
-  		var contact = $('div#contact').offset().top -150;
-  		if($(window).scrollTop() <= services) {
-  			links.eq(0).addClass('activeLink');
-  			links.not(links.eq(0)).removeClass('activeLink');
-  		}
+});
+
 
   		if($(window).scrollTop() >= services &&  $(window).scrollTop() <= client) {
   			links.eq(1).addClass('activeLink');
   			links.not(links.eq(1)).removeClass('activeLink');
   		}
 
-  		if($(window).scrollTop() > client &&  $(window).scrollTop() <= portfolio) {
+  		if($(window).scrollTop() >= client &&  $(window).scrollTop() <= portfolio) {
   			links.eq(2).addClass('activeLink');
   			links.not(links.eq(2)).removeClass('activeLink');
   		}
 
-  		if($(window).scrollTop() > portfolio && $(window).scrollTop() <= mobile) {
+  		if($(window).scrollTop() >= portfolio && $(window).scrollTop() <= mobile) {
   			links.eq(3).addClass('activeLink');
   			links.not(links.eq(3)).removeClass('activeLink');
   		}
 
-  		if($(window).scrollTop() > mobile && $(window).scrollTop() <= about) {
+  		if($(window).scrollTop() >= mobile && $(window).scrollTop() <= about) {
   			links.eq(4).addClass('activeLink');
   			links.not(links.eq(4)).removeClass('activeLink');
   		}
 
-  		if($(window).scrollTop() > about && $(window).scrollTop() <= contact) {
+  		if($(window).scrollTop() >= about && $(window).scrollTop() <= contact) {
   			links.eq(5).addClass('activeLink');
   			links.not(links.eq(5)).removeClass('activeLink');
   		}
 
-  		if($(window).scrollTop() > contact) {
+  		if($(window).scrollTop() >= contact) {
   			links.eq(6).addClass('activeLink');
   			links.not(links.eq(6)).removeClass('activeLink');
   		}
