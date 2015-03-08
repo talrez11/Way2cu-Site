@@ -10,9 +10,8 @@
 		<constant name="menu_mobile">Mobile Friendly</constant>
 		<constant name="menu_about_us">About Us</constant>
 		<constant name="menu_contact">Contact us</constant>
-		<constant name="site_header"><![CDATA[Development  &  Consulting]]></constant>
-		<constant name="header_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		Sed non massa fringilla, auctor diam non, consectetur lorem.
+		<constant name="site_header"><![CDATA[Marketing, Development & Consulting]]></constant>
+		<constant name="header_desc">Welcome to your one stop digital marketing shop, sit back and relax while we do the heavy lifting.
 		</constant>
 		<constant name="header_btn_contact">Contact Us</constant>
 		<constant name="header_btn_about">Who We Are</constant>
