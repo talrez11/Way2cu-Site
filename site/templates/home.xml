@@ -26,8 +26,8 @@
 				<span></span>
 				<h1><cms:text constant="site_header"/></h1>
 				<p><cms:text constant="header_desc"/></p>
-				<a href="#contact"><cms:text constant="header_btn_contact"/></a>
-				<a href="#mobile"><cms:text constant="header_btn_about"/></a>
+				<a href="#portfolio"><cms:text constant="menu_portfolio"/></a>
+				<a href="#contact"><cms:text constant="menu_contact"/></a>
 			<cms:desktop>
 				<a href="#services"><cms:text constant="btn_scroll"/></a>
 			</cms:desktop>
